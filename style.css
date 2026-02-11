@@ -292,6 +292,24 @@ body {
   color: #b48b3c;
   margin-bottom: 30px;
 }
+
+.wedding-images-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px; /* khoảng cách giữa 2 ảnh */
+}
+
+.wedding-image-section {
+  flex: 1;
+  max-width: 500px;
+}
+
+.wedding-image-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .wedding-image-section {
   background: #e8e2d8;
   padding: 60px 20px;
@@ -512,4 +530,20 @@ body {
 @keyframes fadeIn {
   from { transform: scale(0.8); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
+}
+@media (max-width: 768px) {
+  .wedding-images-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 }
