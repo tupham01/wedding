@@ -16,7 +16,9 @@
 </head>
 
 <body>
-
+<div class="modal" id="imgModal">
+  <img id="modalImg">
+</div>
   <header class="hero">
     <div class="container">
       <h1 class="pinyon-script-regular">Thạch Tú & Vân Anh</h1>
@@ -95,7 +97,7 @@
 
   <section class="wedding-image-section">
   <div class="wedding-image-wrapper">
-    <img src="assets/1.png" alt="Wedding Invitation">
+    <img src="./assets/1.png" alt="Wedding Invitation">
   </div>
 </section>
 <br>
@@ -105,12 +107,57 @@
   </div>
 </section>
 
+<section class="gallery-section">
+  <div class="gallery">
+    <img src="assets/1.webp" alt="" class="zoomable" loading="lazy">
+    <img src="assets/16.webp" alt="" class="zoomable" loading="lazy">
+    <img src="assets/2.webp" alt="" class="zoomable" loading="lazy">
+    <img src="assets/3.webp" alt="" class="zoomable" loading="lazy">
+    <img src="assets/4.webp" alt="" class="zoomable" loading="lazy">
+    <img src="assets/5.webp" alt="" class="zoomable" loading="lazy">
+    <img src="assets/6.webp" alt="" class="zoomable" loading="lazy">
+    <img src="assets/7.webp" alt="" class="zoomable" loading="lazy">
+    <img src="assets/8.webp" alt="" class="zoomable" loading="lazy">
+    <img src="assets/9.webp" alt="" class="zoomable" loading="lazy">
+    <img src="assets/10.webp" alt="" class="zoomable" loading="lazy">
+    <img src="assets/11.webp" alt="" class="zoomable" loading="lazy">
+    <img src="assets/12.webp" alt="" class="zoomable" loading="lazy">
+    <img src="assets/13.webp" alt="" class="zoomable" loading="lazy">
+    <img src="assets/14.webp" alt="" class="zoomable" loading="lazy">
+    <img src="assets/15.webp" alt="" class="zoomable" loading="lazy">
+  </div>
+</section>
+
 
   <footer>
     <p>© 2026 Landing Page Demo</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+  const modal = document.getElementById("imgModal");
+  const modalImg = document.getElementById("modalImg");
+
+  document.querySelectorAll(".zoomable").forEach(img => {
+    img.addEventListener("click", () => {
+      modal.classList.add("active");
+      modalImg.src = img.src;
+    });
+  });
+
+  // click nền để đóng
+  modal.addEventListener("click", () => {
+    modal.classList.remove("active");
+  });
+
+  // ESC để đóng
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      modal.classList.remove("active");
+    }
+  });
+</script>
+
+  
 </body>
 
 </html>
