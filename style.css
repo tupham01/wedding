@@ -428,3 +428,50 @@ body {
   from { transform: scale(0.8); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
 }
+
+
+.rsvp-section {
+  padding: 100px 20px;
+  background: #f4f1ea;
+  display: flex;
+  justify-content: center;
+}
+
+.rsvp-container {
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+}
+
+.rsvp-container h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+.rsvp-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.rsvp-container input,
+.rsvp-container select,
+.rsvp-container textarea {
+  padding: 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.rsvp-container button {
+  padding: 14px;
+  background: #3e4a32;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.rsvp-container button:hover {
+  background: #2f3a25;
+}
