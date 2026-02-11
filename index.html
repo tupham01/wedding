@@ -131,7 +131,7 @@
   <div class="rsvp-container">
     <h2>Xác nhận tham dự</h2>
 
-    <form name="rsvp" method="POST" data-netlify="true" onSubmit="submit">
+    <form name="rsvp" method="POST" data-netlify="true">
       
       <!-- Hidden input bắt buộc -->
       <input type="hidden" name="form-name" value="rsvp">
@@ -158,6 +158,12 @@
   <footer>
     <p>© 2026 Landing Page Demo</p>
   </footer>
+<div class="success-popup" id="successPopup">
+  <div class="popup-content">
+    <p>Cảm ơn bạn đã xác nhận ❤️</p>
+    <button onclick="closePopup()">Đóng</button>
+  </div>
+</div>
 
   <script>
   const modal = document.getElementById("imgModal");
@@ -181,6 +187,32 @@
       modal.classList.remove("active");
     }
   });
+
+  const form = document.querySelector('form');
+const popup = document.getElementById('successPopup');
+
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const data = new FormData(form);
+
+  fetch("/", {
+    method: "POST",
+    body: data
+  })
+  .then(() => {
+    popup.classList.add("active");
+    form.reset();
+  })
+  .catch(() => {
+    alert("Có lỗi xảy ra.");
+  });
+});
+
+function closePopup() {
+  popup.classList.remove("active");
+}
+
 </script>
 
   
