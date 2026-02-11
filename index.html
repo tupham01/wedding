@@ -16,6 +16,7 @@
 </head>
 
 <body>
+  
 <div class="modal" id="imgModal">
   <img id="modalImg">
 </div>
@@ -26,7 +27,7 @@
     </div>
   </header>
 
-  <section class="wedding-message">
+  <section class="wedding-message reveal">
   <div class="message-container">
     <h2>Lời Ngỏ</h2>
 
@@ -53,7 +54,7 @@
 </section>
 
 
-  <section class="timeline-section">
+  <section class="timeline-section reveal">
     <h2 class="timeline-title pinyon-script-regular">Timeline tiệc cưới</h2>
     <div class="timeline">
 
@@ -95,19 +96,22 @@
     </div>
   </section>
 
-  <section class="wedding-image-section">
-  <div class="wedding-image-wrapper">
-    <img src="./assets/1.png" alt="Wedding Invitation">
-  </div>
-</section>
-<br>
-<section class="wedding-image-section">
-  <div class="wedding-image-wrapper">
-    <img src="./assets/2.png" alt="Wedding Invitation">
-  </div>
-</section>
+<div class="wedding-images-container">
+  <section class="wedding-image-section reveal">
+    <div class="wedding-image-wrapper">
+      <img src="./assets/1.webp" alt="Wedding Invitation">
+    </div>
+  </section>
 
-<section class="gallery-section">
+  <section class="wedding-image-section reveal">
+    <div class="wedding-image-wrapper">
+      <img src="./assets/2.webp" alt="Wedding Invitation">
+    </div>
+  </section>
+</div>
+
+
+<section class="gallery-section reveal">
   <div class="gallery">
     <img src="assets/16.webp" alt="" class="zoomable" loading="lazy">
     <img src="assets/3.webp" alt="" class="zoomable" loading="lazy">
@@ -210,10 +214,63 @@ form.addEventListener('submit', function(e) {
 function closePopup() {
   popup.classList.remove("active");
 }
+const reveals = document.querySelectorAll(".reveal");
+
+function revealOnScroll() {
+  const windowHeight = window.innerHeight;
+
+  reveals.forEach(el => {
+    const elementTop = el.getBoundingClientRect().top;
+
+    if (elementTop < windowHeight - 100) {
+      el.classList.add("active");
+    }
+  });
+}
+
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const music = document.getElementById("bgMusic");
+
+  const loopStart = 10;  
+  const loopEnd = 393;
+
+  function startMusic() {
+    music.play().then(() => {
+      console.log("Music started");
+    }).catch(err => {
+      console.log("Autoplay blocked:", err);
+    });
+
+    document.removeEventListener("click", startMusic);
+    document.removeEventListener("touchstart", startMusic);
+  }
+
+  document.addEventListener("click", startMusic);
+  document.addEventListener("touchstart", startMusic);
+
+  music.addEventListener("timeupdate", () => {
+    if (music.currentTime >= loopEnd) {
+      music.currentTime = loopStart;
+    }
+  });
+
+  window.addEventListener("scroll", () => {
+  music.play();
+}, { once: true });
+
+});
 
 </script>
 
-  
+<audio id="bgMusic">
+  <source src="./assets/sound.mp3" type="audio/mpeg">
+</audio>
+
+
 </body>
 
 </html>
