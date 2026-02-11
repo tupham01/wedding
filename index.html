@@ -97,19 +97,21 @@
 
   <section class="wedding-image-section">
   <div class="wedding-image-wrapper">
-    <img src="./assets/1.webp" alt="Wedding Invitation">
+    <img src="./assets/1.png" alt="Wedding Invitation">
   </div>
 </section>
 <br>
 <section class="wedding-image-section">
   <div class="wedding-image-wrapper">
-    <img src="./assets/2.webp" alt="Wedding Invitation">
+    <img src="./assets/2.png" alt="Wedding Invitation">
   </div>
 </section>
 
 <section class="gallery-section">
   <div class="gallery">
+    <img src="assets/1.webp" alt="" class="zoomable" loading="lazy">
     <img src="assets/16.webp" alt="" class="zoomable" loading="lazy">
+    <img src="assets/2.webp" alt="" class="zoomable" loading="lazy">
     <img src="assets/3.webp" alt="" class="zoomable" loading="lazy">
     <img src="assets/4.webp" alt="" class="zoomable" loading="lazy">
     <img src="assets/5.webp" alt="" class="zoomable" loading="lazy">
@@ -123,6 +125,32 @@
     <img src="assets/13.webp" alt="" class="zoomable" loading="lazy">
     <img src="assets/14.webp" alt="" class="zoomable" loading="lazy">
     <img src="assets/15.webp" alt="" class="zoomable" loading="lazy">
+  </div>
+</section>
+<section class="rsvp-section">
+  <div class="rsvp-container">
+    <h2>Xác nhận tham dự</h2>
+
+    <form name="rsvp" method="POST" data-netlify="true">
+      
+      <!-- Hidden input bắt buộc -->
+      <input type="hidden" name="form-name" value="rsvp">
+
+      <input type="text" name="name" placeholder="Họ và tên" required>
+
+      <input type="tel" name="phone" placeholder="Số điện thoại" required>
+
+      <select name="attendance" required>
+        <option value="">Bạn sẽ tham dự?</option>
+        <option value="Có">Tôi sẽ tham dự</option>
+        <option value="Không">Tôi không thể tham dự</option>
+      </select>
+
+      <textarea name="message" placeholder="Lời nhắn cho cô dâu chú rể (tuỳ chọn)"></textarea>
+
+      <button type="submit">Gửi xác nhận</button>
+
+    </form>
   </div>
 </section>
 
@@ -153,6 +181,10 @@
       modal.classList.remove("active");
     }
   });
+
+  document.querySelector("form").addEventListener("submit", function() {
+  alert("Cảm ơn bạn đã xác nhận ❤️");
+});
 </script>
 
   
