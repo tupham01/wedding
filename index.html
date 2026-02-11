@@ -131,7 +131,7 @@
   <div class="rsvp-container">
     <h2>Xác nhận tham dự</h2>
 
-    <form name="rsvp" method="POST" data-netlify="true">
+    <form name="rsvp" method="POST" data-netlify="true" onSubmit="submit">
       
       <!-- Hidden input bắt buộc -->
       <input type="hidden" name="form-name" value="rsvp">
@@ -181,10 +181,6 @@
       modal.classList.remove("active");
     }
   });
-
-  document.querySelector("form").addEventListener("submit", function() {
-  alert("Cảm ơn bạn đã xác nhận ❤️");
-});
 </script>
 
   
