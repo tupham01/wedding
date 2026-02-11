@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<title>Wedding Invitation</title>
+
+<style>
+
+body {
+  background: #d9d3ce;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* outer card */
+.invitation-wrapper {
+  background: #e7e2dd;
+  padding: 30px;
+}
+
+/* inner card */
+.invitation {
+  background: #efebe7;
+  border: 3px solid #7a6e67;
+  padding: 80px 60px;
+  text-align: center;
+  max-width: 650px;
+  position: relative;
+  font-family: 'Cormorant Garamond', serif;
+  color: #6e625c;
+}
+
+/* ring icon */
+.rings {
+  font-size: 40px;
+  color: #b48b3c;
+  margin-bottom: 30px;
+}
+
+/* upper text */
+.invitation h2 {
+  letter-spacing: 4px;
+  font-weight: 400;
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+
+/* name */
+.names {
+  font-family: 'Great Vibes', cursive;
+  font-size: 60px;
+  color: #b48b3c;
+  margin-bottom: 30px;
+}
+
+/* paragraph */
+.invitation p {
+  font-size: 20px;
+  line-height: 1.7;
+  margin: 20px 0;
+}
+
+/* date section */
+.date-section {
+  margin: 40px 0;
+  letter-spacing: 3px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* divider */
+.divider {
+  width: 150px;
+  height: 2px;
+  background: #7a6e67;
+  margin: 25px auto;
+}
+
+/* bottom text */
+.footer-text {
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .invitation {
+    padding: 50px 30px;
+  }
+
+  .names {
+    font-size: 45px;
+  }
+
+  .invitation p,
+  .footer-text {
+    font-size: 18px;
+  }
+
+  .date-section {
+    font-size: 20px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="invitation-wrapper">
+  <div class="invitation">
+
+    <div class="rings">💍</div>
+
+    <h2>WE ARE DELIGHTED TO<br>INVITE YOU</h2>
+
+    <div class="names">Harper Russo</div>
+
+    <p>
+      to join us as we celebrate the wedding<br>
+      of Olivia and Richard.<br>
+      It is a joyous occasion for us, and we would be<br>
+      honored to have you share in this special moment<br>
+      with us.
+    </p>
+
+    <div class="date-section">
+      ON MAY 14, 2030<br>
+      AT 3:00 PM<br>
+      IN THE CHURCH
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="footer-text">
+      Your presence will truly make this day memorable<br>
+      for our family. We look forward to seeing you there.
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,373 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  line-height: 1.6;
+}
+
+.pinyon-script-regular {
+  font-family: "Pinyon Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.great-vibes-regular {
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+/* .container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 20px;
+} */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  /* full màn hình */
+  background-image: url("./assets/bg-paper.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+
+
+/* Lớp phủ tối để chữ rõ */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+/* Nội dung nằm trên hình */
+.hero .container {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.3rem;
+}
+
+
+
+.timeline-title {
+  padding:20px;
+  font-size: 3rem;
+  letter-spacing: 3px;
+  color: #9c6b2f;
+  margin:0;
+}
+
+.timeline-section{
+  background-color: white;
+  padding-bottom: 50px;
+}
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.container {
+  padding: 10px 50px;
+  position: relative;
+  width: 50%;
+  animation: movedown 1s linear forwards;
+  opacity: 0;
+}
+
+@keyframes movedown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.container:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.container:nth-child(3) {
+  animation-delay: 1s;
+}
+
+.container:nth-child(4) {
+  animation-delay: 1.5s;
+}
+
+.container:nth-child(5) {
+  animation-delay: 2s;
+}
+
+.container:nth-child(6) {
+  animation-delay: 2.5s;
+}
+
+
+.textbox {
+  padding: 20px 30px;
+  background-color: #9c6b2f;
+  position: relative;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.left-container {
+  left: 0;
+}
+
+.right-container {
+  left: 50%;
+}
+
+.container img {
+  position: absolute;
+  width: 40px;
+  border-radius: 50%;
+  right: -20px;
+  top: 32px;
+  z-index: 10;
+}
+
+.right-container img {
+  left: -20px;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 100%;
+  background: #9c6b2f;
+  top: 0;
+  left: 50%;
+  margin-left: -3px;
+  z-index: 1;
+  animation: moveline 4.5s linear forwards;
+
+}
+
+@keyframes moveline {
+  0% {
+    height: 0;
+  }
+
+  100% {
+    height: 100%;
+  }
+}
+
+.textbox h2 {
+  font-weight: 600;
+  background-color: #9c6b2f;
+}
+
+.textbox small {
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.left-container-arrow {
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 28px;
+  z-index: 1;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid #fff;
+  right: -15px;
+}
+/* Responsive */
+@media screen and (max-width:600px) {
+
+  .timeline {
+    margin: auto;
+  }
+
+  .timeline::after {
+    left: 31px;
+  }
+
+  .container {
+    width: 100%;
+    padding-left: 80px;
+    padding-right: 25px;
+  }
+
+  .textbox {
+    font-size: 20px;
+  }
+
+  .textbox small {
+    margin-bottom: 10px;
+  }
+
+  .right-container {
+    left: 0;
+  }
+
+  .left-container img,
+  .right-container img {
+    left: 10px;
+  }
+
+  .left-container-arrow,
+  .right-container-arrow {
+    border-right: 15px solid #9c6b2f;
+    border-left: 0;
+    left: -15px;
+
+  }
+
+
+}
+
+
+
+.invitation-wrapper {
+  background: #e7e2dd;
+  padding: 30px;
+}
+
+/* inner card */
+.invitation {
+  background: #efebe7;
+  border: 3px solid #7a6e67;
+  padding: 80px 60px;
+  text-align: center;
+  max-width: 650px;
+  position: relative;
+  font-family: 'Cormorant Garamond', serif;
+  color: #6e625c;
+}
+
+/* ring icon */
+.rings {
+  font-size: 40px;
+  color: #b48b3c;
+  margin-bottom: 30px;
+}
+
+/* upper text */
+.invitation h2 {
+  letter-spacing: 4px;
+  font-weight: 400;
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+
+/* name */
+.names {
+  font-family: 'Great Vibes', cursive;
+  font-size: 60px;
+  color: #b48b3c;
+  margin-bottom: 30px;
+}
+.wedding-image-section {
+  background: #e8e2d8;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.wedding-image-wrapper {
+  max-width: 1100px;   /* desktop không bị quá to */
+  width: 100%;
+}
+
+.wedding-image-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;  /* nếu bạn muốn bo góc nhẹ */
+}
+
+
+/* bottom text */
+.footer-text {
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .invitation {
+    padding: 50px 30px;
+  }
+
+  .names {
+    font-size: 45px;
+  }
+
+  .invitation p,
+  .footer-text {
+    font-size: 18px;
+  }
+
+  .date-section {
+    font-size: 20px;
+  }
+}
+
+
+.wedding-message {
+  background: #f4f1ea;
+  padding: 100px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.message-container {
+  max-width: 800px;
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  color: #5b5b5b;
+}
+
+.message-container h2 {
+  font-size: 40px;
+  margin-bottom: 40px;
+  color: #3e4a32;
+  letter-spacing: 2px;
+}
+
+.message-container p {
+  font-size: 20px;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+.message-container .highlight {
+  margin-top: 40px;
+  font-weight: 600;
+  font-size: 22px;
+  color: #3e4a32;
+}
