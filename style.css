@@ -69,8 +69,8 @@ body.no-scroll {
 }
 
 .hero h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
+  white-space: nowrap;
+  font-size: clamp(28px, 6vw, 64px);
 }
 
 .hero p {
@@ -83,8 +83,9 @@ body.no-scroll {
   padding:20px;
   font-size: 3rem;
   letter-spacing: 3px;
-  color: #9c6b2f;
+  color: #52603c;
   margin:0;
+  text-align:center;
 }
 
 .timeline-section{
@@ -137,10 +138,12 @@ body.no-scroll {
   animation-delay: 2.5s;
 }
 
-
+.timeline-text {
+  color: whitesmoke;
+}
 .textbox {
   padding: 20px 30px;
-  background-color: #9c6b2f;
+  background-color: #52603c;
   position: relative;
   border-radius: 6px;
   font-size: 15px;
@@ -172,7 +175,7 @@ body.no-scroll {
   position: absolute;
   width: 6px;
   height: 100%;
-  background: #9c6b2f;
+  background: #52603c;
   top: 0;
   left: 50%;
   margin-left: -3px;
@@ -193,7 +196,7 @@ body.no-scroll {
 
 .textbox h2 {
   font-weight: 600;
-  background-color: #9c6b2f;
+  background-color: #52603c;
 }
 
 .textbox small {
@@ -240,20 +243,6 @@ body.no-scroll {
   .right-container {
     left: 0;
   }
-
-  .left-container img,
-  .right-container img {
-    left: 10px;
-  }
-
-  .left-container-arrow,
-  .right-container-arrow {
-    border-right: 15px solid #9c6b2f;
-    border-left: 0;
-    left: -15px;
-
-  }
-
 
 }
 
@@ -576,7 +565,8 @@ body.no-scroll {
 }
 
 .intro-content h1 {
-  font-size: 48px;
+  white-space: nowrap;
+  font-size: clamp(28px, 6vw, 64px);
   margin-bottom: 10px;
 }
 
@@ -604,4 +594,29 @@ body.no-scroll {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+.thankyou-footer {
+  background: linear-gradient(to top, #f8f4ef, #ffffff);
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.footer-content h2 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #52603c;
+}
+
+.footer-content p {
+  font-size: 18px;
+  color: #555;
+  margin: 10px 0;
+}
+
+.couple-names {
+  font-size: 22px;
+  margin-top: 20px;
+  color: #52603c;
+  letter-spacing: 2px;
 }
