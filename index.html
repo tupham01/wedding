@@ -283,14 +283,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Fade in nhạc
     let vol = 0;
-    const fade = setInterval(() => {
-      if (vol < 1) {
-        vol += 0.05;
-        music.volume = vol;
-      } else {
-        clearInterval(fade);
-      }
-    }, 100);
+const fade = setInterval(() => {
+  vol += 0.05;
+
+  if (vol >= 1) {
+    vol = 1;
+    clearInterval(fade);
+  }
+
+  music.volume = vol;
+}, 100);
+
 
   });
 music.addEventListener("timeupdate", function () {
