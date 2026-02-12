@@ -545,7 +545,7 @@ body.no-scroll {
 .intro {
   position: fixed;
   inset: 0;
-  background: linear-gradient(135deg, #111, #000);
+  background: linear-gradient(135deg, #2f3a25, #3e4a32);
   display: flex;
   align-items: center;
   justify-content: center;
